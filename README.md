@@ -37,9 +37,9 @@ For complete details and guidelines, please visit our [idThon Notion Page]().
 
 | Challenge    | Link                                                                                        | Description                                                    | Prizes                  |
 | ------------ | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------- |
-| Challenge 1  | [`Start`](https://github.com/idThon-hackathon/challenges/blob/main/challenge-1.md)         | Yet to announce                      | idThon Winner Trophy     |
-| Challenge 2  | [`Start`](https://github.com/idThon-hackathon/challenges/blob/main/challenge-2.md)         | Yet to announce    | idThon Runner-up Trophy  |
-| Challenge 3  | [`Start`](https://github.com/idThon-hackathon/challenges/blob/main/challenge-3.md)         | Yet to announce            | idThon Innovator Trophy |
+| Challenge 1  | [`Start`](https://github.com/Polygon-Advocates/idThon/blob/main/challenge-1.md)         | Yet to announce                      | idThon Winner Trophy     |
+| Challenge 2  | [`Start`](https://github.com/Polygon-Advocates/idThon/blob/main/challenge-2.md)         | Yet to announce    | idThon Runner-up Trophy  |
+| Challenge 3  | [`Start`](https://github.com/Polygon-Advocates/idThon/blob/main/challenge-3.md)         | Yet to announce            | idThon Innovator Trophy |
 
 
 ---
