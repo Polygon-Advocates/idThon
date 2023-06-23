@@ -26,7 +26,6 @@ Participate now and stand a chance to win a share of the $4500 [$1500 each team 
 
 5️⃣ Plagiarism and intellectual property infringement are strictly prohibited. Ensure that your submission is an original creation.
 
-
 6️⃣ By participating, you grant permission for your project to be shared and showcased by Polygon for promotional purposes.
 
 7️⃣ The decision of the judges is final and binding.
@@ -40,7 +39,7 @@ Participate now and stand a chance to win a share of the $4500 [$1500 each team 
     
 3.  Prioritize a seamless user experience and clearly communicate access requirements.
     
-4.  Submit your completed project [**here**](https://airtable.com/shrNCmi6zP4RDklNi) before the deadline, following the guidelines provided in the challenge repository.
+4.  Submit your completed project [**here**](https://airtable.com/shrNCmi6zP4RDklNi) before the deadline, following the [guidelines](https://github.com/Polygon-Advocates/idThon/blob/main/pull_request_template.md) provided in the challenge repository.
     
 
 🏆 **Evaluation Criteria:** Projects will be evaluated based on the innovative use of Polygon ID, user experience UX,  and the overall quality of your submission.
