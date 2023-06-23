@@ -7,6 +7,6 @@ This pull request is for the idThon Challenge 1. I have reviewed the idThon docu
 ## Checklist
 
 - [ ] I have created a new file named `solution-1.md` for this challenge.
-- [ ] I have added the details of my submission to the [Airtable form]().
+- [ ] I have added the details of my submission to the [Airtable form](https://airtable.com/shrNCmi6zP4RDklNi).
 - [ ] I have named my branch `username_idThon`.
 - [ ] I have named my PR `username_idThon`.
