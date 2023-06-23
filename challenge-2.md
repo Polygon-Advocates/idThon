@@ -24,7 +24,7 @@ Welcome to the Verifiable Credential Challenge! In this exciting challenge, part
 
 8️⃣ Submit your completed project details [here](https://airtable.com/shrNCmi6zP4RDklNi)  
 
-NOTE: Add the link to the GitHub repo in solution-2.MD file, and then while adding the details in the submission, follow the guidelines mentioned in the IDThon GitHub.
+NOTE: Add the link to the GitHub repo in solution-2.MD file, and then while adding the details in the submission, follow the [guidelines](https://github.com/Polygon-Advocates/idThon/blob/main/pull_request_template.md) mentioned in the IDThon GitHub.
 
 ## Reward(s)
 
