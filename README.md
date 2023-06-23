@@ -5,7 +5,7 @@
 
 **IDThon** is an exciting set of challenges focused on helping the understating of decentralised Identify with Polygon ID.
 
-It brings together developers, creators, and enthusiasts to explore innovative solutions in the field of identity management using polygon ID. The event is open to all participants who are passionate about leveraging decentralized technologies for secure and user-centric identity systems.
+It brings together developers, creators, and enthusiasts to explore innovative solutions in the field of identity management using **Polygon ID**. The event is open to all participants who are passionate about leveraging decentralized technologies for secure and user-centric identity systems.
 
 ---
 
