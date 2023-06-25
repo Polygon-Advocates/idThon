@@ -14,11 +14,11 @@ It brings together developers, creators, and enthusiasts to explore innovative s
 For complete details and guidelines, please visit our [IDThon Notion Page]().
 
 ---
-## Steps Challenge- 1
+## Steps Challenge:1
 - [ ] Go through the Polygon ID Documentation.
 - [ ] Draft a twitter thread (or) a 30sec video sharing insights on PID mentioning possible applications fields or products where PID should be integrated.
 - [ ] Submit the link of your tweeted thread or video here.
-## Steps Challenge- 2 & 3
+## Steps Challenge: 2 & 3
 
 - [ ] Fork the repository
 - [ ] Create a new branch `username_idThon`, e.g., `JohnDoe_IDThon`
