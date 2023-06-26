@@ -1,6 +1,6 @@
  ## 🌟 Challenge 2
 
-## Description: Verifiable Credential Website/App Creation 🌐
+## Description: Verifiable Credential Website/dApp Creation 🌐
 
 Welcome to the Verifiable Credential Challenge! In this exciting challenge, participants are invited to create a website or app that leverages Polygon ID to enforce specific access requirements. By utilizing verifiable credentials, you can build a gated digital experience where access is granted only to those who meet certain predefined criteria.
 
