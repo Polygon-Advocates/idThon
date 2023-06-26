@@ -1,11 +1,11 @@
   
-## 🌟 Challenge 3: ~~Hackathon~~ idThon 🆔 👀
+## 🌟 Challenge 3: ~~Hackathon~~ IDThon 🆔 👀
 
 💰 **Bounty: $4500 + Exclusive Time Slot with Polygon ID Team! 💼**
 
 ## 📢 **Description**
 
-Get ready for Challenge 3, the **idThon!** This hackathon invites you to unleash your creativity and technical capabilities to build a dApp leveraging Polygon ID tools, you can showcase your innovation in creating secure digital experiences. 
+Get ready for Challenge 3, the **IDThon!** This hackathon invites you to unleash your creativity and technical capabilities to build a dApp leveraging Polygon ID tools, you can showcase your innovation in creating secure digital experiences. 
 
 Participate now and stand a chance to win a share of the $4500 [$1500 each team i.e. 1500*3[Top 3 teams] = $4500] bounty and an exclusive time slot with the Polygon ID team!
 
@@ -26,7 +26,7 @@ Participate now and stand a chance to win a share of the $4500 [$1500 each team 
 
 5️⃣ Plagiarism and intellectual property infringement are strictly prohibited. Ensure that your submission is an original creation.
 
-6️⃣ By participating, you grant permission for your project to be shared and showcased by Polygon for promotional purposes.
+6️⃣ By participating, you grant permission for your project to be shared and showcased by Polygon for promotional purposes, and you may be asked for a KYC for the prize distribution.
 
 7️⃣ The decision of the judges is final and binding.
 
