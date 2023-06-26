@@ -1,6 +1,6 @@
  ## 🌟 Challenge 2
 
-## Description: Verifiable Credential Website/dApp Creation 🌐
+## Description: Build a verifiable Credential Website/dApp 🚪
 
 Welcome to the Verifiable Credential Challenge! In this exciting challenge, participants are invited to create a website or app that leverages Polygon ID to enforce specific access requirements. By utilizing verifiable credentials, you can build a gated digital experience where access is granted only to those who meet certain predefined criteria.
 
@@ -8,9 +8,9 @@ Welcome to the Verifiable Credential Challenge! In this exciting challenge, part
 
 ## 📝 Steps to Participate: 
 
-1️⃣ Visit the GitHub repository for detailed instructions and resources: [GitHub Repo Link](https://github.com/oceans404/vc-verifier)
+1️⃣ Visit the GitHub repository for detailed instructions and resources: [GitHub Repo Link](https://github.com/oceans404/vc-verifier) 
 
-2️⃣ Familiarize yourself with Polygon ID and specially Verifier SDK and their role in digital identity verification. You may refer the docs [here](https://0xpolygonid.github.io/tutorials/).
+2️⃣ Familiarize yourself with Polygon ID and specially Verifier SDK and their role in digital identity verification. You may refer the docs [here](https://0xpolygonid.github.io/tutorials/) and a detailed video from Steph explaining the [**Verifier SDK**](https://drive.google.com/file/d/1ZCFpnxOi-nWYUoGrGbSEcjIf1Vmb35NP/view?usp=sharing)
 
 3️⃣ Brainstorm and choose an access control scenario for your website/app. Consider creative ideas that require the use of Verifiable Credentials.
 
@@ -22,12 +22,12 @@ Welcome to the Verifiable Credential Challenge! In this exciting challenge, part
 
 7️⃣ Document your process, challenges faced, and solutions implemented.
 
-8️⃣ Submit your completed project details [here](https://airtable.com/shrNCmi6zP4RDklNi)  
+8️⃣ Submit your completed project details [**here**](https://airtable.com/shrNCmi6zP4RDklNi)  
 
-NOTE: Add the link to the GitHub repo in solution-2.MD file, and then while adding the details in the submission, follow the [guidelines](https://github.com/Polygon-Advocates/idThon/blob/main/pull_request_template.md) mentioned in the IDThon GitHub.
+**NOTE:** Add the link to the GitHub repo in `solution-2.MD` file, and then while adding the details in the submission, follow the [guidelines](https://github.com/Polygon-Advocates/idThon/blob/main/pull_request_template.md) mentioned in the IDThon GitHub.
 
 ## Reward(s)
 
-🎁 Get **cool swags** and an **exclusive NFT** as rewards for your outstanding work!
+🎁 Get **cool swags** and an **exclusive PFP** as rewards for your outstanding work!
 
 
