@@ -7,11 +7,6 @@
 
 It brings together developers, creators, and enthusiasts to explore innovative solutions in the field of identity management using **Polygon ID**. The event is open to all participants who are passionate about leveraging decentralized technologies for secure and user-centric identity systems.
 
----
-
-# tl;dr
-
-For complete details and guidelines, please visit our [IDThon Notion Page]().
 
 ---
 
