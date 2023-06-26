@@ -16,7 +16,6 @@ It brings together developers, creators, and enthusiasts to explore innovative s
 - [ ] Create a new branch `username_idThon`, e.g., `JohnDoe_IDThon`
 - [ ] Create `solution-1.md`, `solution-2.md`, and `solution-3.md` in the root directory for your respective solutions.
 - [ ] Let's get started! Begin solving the challenges.
-- [ ] Don't forget to refer to our [**Notion Page**]() for detailed challenge instructions.
 
 ---
 
