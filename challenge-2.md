@@ -8,7 +8,7 @@ Welcome to the Verifiable Credential Challenge! In this exciting challenge, part
 
 ## 📝 Steps to Participate: 
 
-1️⃣ Visit the GitHub repository for detailed instructions and resources: [GitHub Repo Link](https://github.com/oceans404/vc-verifier) 
+1️⃣ Visit the GitHub repository for detailed instructions and resources: [GitHub Repo Link]([https://github.com/oceans404/vc-verifier](https://github.com/oceans404/fullstack-polygon-id-vc-gated-dapp)) 
 
 2️⃣ Familiarize yourself with Polygon ID and specially Verifier SDK and their role in digital identity verification. You may refer the docs [here](https://0xpolygonid.github.io/tutorials/) and a detailed video from Steph explaining the [**Verifier SDK**](https://drive.google.com/file/d/1ZCFpnxOi-nWYUoGrGbSEcjIf1Vmb35NP/view?usp=sharing)
 
