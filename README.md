@@ -27,13 +27,21 @@ It brings together developers, creators, and enthusiasts to explore innovative s
 | ------------ | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------- |
 | Challenge 1  | [`Start`](https://github.com/Polygon-Advocates/idThon/blob/main/challenge-1.md)         | 🐧 Documentation deep dive                     | PFP|
 | Challenge 2  | [`Start`](https://github.com/Polygon-Advocates/idThon/blob/main/challenge-2.md)         |  🐯 Building a VC Gated Website with Polygon ID | PFP and Swags  |
-| Challenge 3  | [`Start`](https://github.com/Polygon-Advocates/idThon/blob/main/challenge-3.md)         |  🦊 **Open track**, Build any  projects using Polygon ID tools | PFP and Pool prize of **💲4500**  |
+| Challenge 3  | [`Start`](https://github.com/Polygon-Advocates/idThon/blob/main/challenge-3.md)         |  🦊 **Open track**, Build any  projects using Polygon ID tools | Pool prize of **💲4500** and an exclusive call with ID Team |
 
 ---
 
 ## ❓ Got Questions or Need Help?
 
 Join our dedicated Telegram group to seek assistance from the IDThon community and organizers.
+
+We suggest you to start with the below videos to gain some ideas about the following topics easing your understanding.
+
+**Issuer node 101: [Link to the video](https://drive.google.com/file/d/1OX2BCCEBNSUq-lxgCzjssiGRIi93xk6w/view?usp=sharing)**  
+  
+**JS SDK & Wallet SDK: [Link to the video](https://drive.google.com/file/d/1ui803i2fvWy3z9ZBivdwwjXDyevxkfkv/view?usp=sharing)**  
+  
+**Using the Verifier SDK: [Link to the video](https://drive.google.com/file/d/1ZCFpnxOi-nWYUoGrGbSEcjIf1Vmb35NP/view?usp=sharing)**
 
 🚪 **Join here** : [zkBuilders](https://t.me/zkPowerBuilders)  post your doubts and quries here ✨
 
