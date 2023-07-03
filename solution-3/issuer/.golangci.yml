@@ -1,0 +1,81 @@
+run:
+  allow-parallel-runners: true
+  go: '1.18'
+  timeout: 5m
+
+linters:
+  disable-all: true
+  enable:
+    - bidichk
+    - bodyclose
+    - containedctx
+    - contextcheck
+    - exportloopref
+    - errcheck
+    - forbidigo
+    - forcetypeassert
+    - gci
+    - gocognit
+    - gocyclo
+#    - gocritic
+    - gosimple
+    - gofumpt
+    - gomnd
+    - govet
+    - ineffassign
+    - misspell
+    - staticcheck
+    - revive
+    - typecheck
+    - unconvert
+    - unused
+
+linters-settings:
+  depguard:
+    list-type: blacklist
+    include-go-root: false
+    packages:
+      - github.com/gofrs/uuid -> this should be changed by pkg from google
+  errcheck:
+    exclude-functions:
+      - db.Close()
+
+  forbidigo:
+    forbid:
+      - 'spew\.Dump'
+      - '^fmt\.Print.*$'
+  gci:
+    custom-order: true
+    skip-generated: true
+    sections:
+      - standard
+      - default
+      - prefix(github.com/polygonid/sh-id-platform)
+      - blank
+      - dot
+#  gocritic:
+#    enabled-tags:
+#      - diagnostic
+#      - style
+#      - performance
+#    disabled-checks:
+  gofumpt:
+    lang-version: "1.18"
+  gocognit:
+    min-complexity: 38
+  gocyclo:
+    min-complexity: 35
+  revive:
+    enable-all-rules: false
+    rules:
+      - name: argument-limit
+        severity: warning
+        disabled: false
+        arguments: [ 13 ]
+      - name: exported
+        severity: warning
+        disabled: false
+
+
+issues:
+  exclude-use-default: false

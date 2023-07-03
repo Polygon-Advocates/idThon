@@ -1,0 +1,95 @@
+Arguments: 
+  /Users/afo/.nvm/versions/node/v16.15.0/bin/node /Users/afo/.nvm/versions/node/v16.15.0/bin/yarn
+
+PATH: 
+  /opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin:/Users/afo/google-cloud-sdk/bin:/Users/afo/.docker/bin:/usr/local/opt/openssl/bin:/Users/afo/Library/pnpm:/Users/afo/.wasmer/bin:/Users/afo/.cargo/bin:/Users/afo/.nvm/versions/node/v16.15.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Keybase.app/Contents/SharedSupport/bin:/Library/Apple/usr/bin:/Users/afo/Library/Android/sdk/platform-tools:/Users/afo/Library/pnpm:/Users/afo/.wasmer/bin:/Users/afo/.cargo/bin:/Users/afo/.nvm/versions/node/v16.15.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/afo/.wasmer/globals/wapm_packages/.bin:/Users/afo/.foundry/bin:/Users/afo/go:/usr/local/go/bin:/usr/local/go/bin:/Users/afo/go/bin:/Users/afo/go/bin:/Users/afo/.wasmer/globals/wapm_packages/.bin:/Users/afo/.foundry/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: EEXIST: file already exists, mkdir '/Users/afo/Code/wefa/openar/packages/client/node_modules/@xstate/cli/node_modules/@xstate'
+
+npm manifest: 
+  {
+    "name": "client",
+    "version": "0.0.0",
+    "private": true,
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+      "build": "vite build",
+      "dev": "wait-port localhost:8545 && vite --host",
+      "initialize": "pnpm build",
+      "preview": "vite preview",
+      "test": "tsc --noEmit"
+    },
+    "dependencies": {
+      "@ethersproject/providers": "^5.7.2",
+      "@latticexyz/common": "2.0.0-alpha.1.182",
+      "@latticexyz/dev-tools": "2.0.0-alpha.1.182",
+      "@latticexyz/network": "2.0.0-alpha.1.182",
+      "@latticexyz/react": "2.0.0-alpha.1.182",
+      "@latticexyz/recs": "2.0.0-alpha.1.182",
+      "@latticexyz/schema-type": "2.0.0-alpha.1.182",
+      "@latticexyz/std-client": "2.0.0-alpha.1.182",
+      "@latticexyz/utils": "2.0.0-alpha.1.182",
+      "@latticexyz/world": "2.0.0-alpha.1.182",
+      "@rainbow-me/rainbowkit": "1.0.0",
+      "@react-spring/web": "9.6.1",
+      "@types/lodash": "4.14.194",
+      "@use-gesture/react": "10.2.26",
+      "@wagmi/chains": "^0.2.22",
+      "@xstate/react": "^3.2.1",
+      "axios": "1.3.6",
+      "buffer": "^6.0.3",
+      "ethers": "^5.7.2",
+      "nanoid": "4.0.2",
+      "openar": "workspace:*",
+      "tictactoe": "workspace:*",
+      "checkers": "workspace:*",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-router-dom": "^6.11.0",
+      "siwe": "1.1.6",
+      "viem": "~0.3.19",
+      "wagmi": "^1.0.5",
+      "xstate": "4.37.0"
+    },
+    "devDependencies": {
+      "@testing-library/jest-dom": "^5.16.4",
+      "@testing-library/react": "^13.4.0",
+      "@testing-library/user-event": "^14.4.3",
+      "@types/react": "^18.2.6",
+      "@types/react-dom": "^18.2.4",
+      "@types/node": "18.15.12",
+      "@xstate/cli": "^0.4.2",
+      "@vitejs/plugin-react-swc": "3.3.0",
+      "autoprefixer": "10.4.14",
+      "daisyui": "2.51.5",
+      "dotenv": "16.0.3",
+      "eslint-plugin-react": "7.31.11",
+      "eslint-plugin-react-hooks": "4.6.0",
+      "fake-indexeddb": "4.0.1",
+      "postcss": "8.4.23",
+      "tailwindcss": "3.3.1",
+      "jsdom": "22.0.0",
+      "vitest": "0.30.1",
+      "vite": "^4.2.1",
+      "vite-plugin-mkcert": "1.15.0",
+      "vite-plugin-svgr": "^3.2.0",
+      "vite-plugin-pwa": "0.14.7"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

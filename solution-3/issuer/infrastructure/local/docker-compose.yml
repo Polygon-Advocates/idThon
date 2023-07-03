@@ -1,0 +1,65 @@
+version: "3.9"
+services:
+
+  ui:
+    build:
+      context: ../../ui/
+      dockerfile: Dockerfile
+    ports:
+      - "8088:80"
+    env_file:
+      - ../../.env-api
+      - ../../.env-ui
+
+  api:
+    build:
+      context: ../../
+      dockerfile: ${DOCKER_FILE}
+    ports:
+      - "3001:3001"
+    env_file:
+      - ../../.env-api
+      - ../../.env-issuer
+    command: sh -c "sleep 4s && ./migrate && ./platform"
+
+  api-ui:
+    build:
+      context: ../../
+      dockerfile: ${DOCKER_FILE}
+    ports:
+      - "3002:3002"
+    env_file:
+      - ../../.env-api
+      - ../../.env-issuer
+    command: sh -c "sleep 4s && ./migrate && ./platform_ui"
+
+  notifications:
+    build:
+      context: ../../
+      dockerfile: ${DOCKER_FILE}
+    env_file:
+      - ../../.env-api
+      - ../../.env-issuer
+    command: sh -c "sleep 4s && ./notifications"
+
+  pending_publisher:
+    build:
+      context: ../../
+      dockerfile: ${DOCKER_FILE}
+    env_file:
+      - ../../.env-api
+      - ../../.env-issuer
+    command: sh -c "sleep 4s &&  ./pending_publisher"
+
+  initializer:
+    build:
+      context: ../../
+      dockerfile: ${DOCKER_FILE}
+    env_file:
+      - ../../.env-api
+      - ../../.env-issuer
+    command: sh -c "sleep 4s && ./migrate && ./issuer_initializer"
+
+networks:
+  default:
+      name: issuer-network

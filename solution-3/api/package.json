@@ -1,0 +1,75 @@
+{
+  "name": "api",
+  "license": "MIT",
+  "version": "0.0.0",
+  "private": true,
+  "description": "API for WEFA app",
+  "repository": {
+    "url": "https://github.com/wefa-tech/openar/packages/api"
+  },
+  "keywords": [
+    "node",
+    "graphql-codegen",
+    "fastify",
+    "typescript",
+    "api",
+    "wefa"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "docker:build": "docker build -t api .",
+    "docker:compose": "docker-compose up -d --build",
+    "docker:run": "docker run -p 8081:8081 api",
+    "format": "pnpm run prettier && pnpm run lint",
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint . --ext .ts,.tsx --quiet --fix",
+    "dev": "pnpm run docker:compose && bob-tsm --node-env=dev --cjs --watch=src src/index.ts",
+    "test": "cross-env jest",
+    "start": "bob-tsm --node-env=prod --cjs src/index.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "8.3.0",
+    "@fastify/cors": "8.2.1",
+    "@fastify/helmet": "10.1.0",
+    "@fastify/multipart": "^7.6.0",
+    "@fastify/redis": "6.1.0",
+    "@fastify/sensible": "5.2.0",
+    "@fastify/session": "10.1.1",
+    "@graphql-tools/load-files": "^6.6.1",
+    "@sentry/node": "7.54.0",
+    "base64url": "3.0.1",
+    "bob-tsm": "^1.1.2",
+    "connect-redis": "7.0.1",
+    "dotenv": "^16.0.3",
+    "ethers": "5.5.1",
+    "fastify": "4.14.1",
+    "form-auto-content": "^3.1.0",
+    "graphql": "16.6.0",
+    "ioredis": "5.3.1",
+    "node-fetch": "^3.3.1",
+    "redis": "4.6.7",
+    "tap": "^16.3.4"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "2.5.12",
+    "@types/supertest": "2.0.12",
+    "@types/tap": "^15.0.8",
+    "convert-csv-to-json": "2.0.0",
+    "cross-env": "^7.0.3",
+    "csv-parser": "3.0.0",
+    "esbuild": "^0.17.12",
+    "express-session": "1.17.3",
+    "supertest": "6.3.3"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "tabWidth": 2,
+    "useTabs": false,
+    "bracketSpacing": true
+  },
+  "jest": {
+    "preset": "ts-jest/presets/default-esm",
+    "testEnvironment": "node"
+  }
+}

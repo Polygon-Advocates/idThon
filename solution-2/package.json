@@ -1,0 +1,13 @@
+{
+  "name": "solution-2",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/wefa-tech/idThon/solution-2"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,generator,client -c cyan,yellow,magenta 'cd api && npm start' 'pnpm dev:creature-generator' 'cd client && npm start'",
+    "dev:creature-generator": "cd creature-generator && python3 main.py"
+  }
+}

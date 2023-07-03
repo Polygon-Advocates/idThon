@@ -1,0 +1,6 @@
+flask[async]==2.3.2
+Pillow
+requests
+gunicorn==20.1.0
+python-dotenv
+

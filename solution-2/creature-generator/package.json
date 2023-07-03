@@ -1,0 +1,23 @@
+{
+  "name": "creature-generator",
+  "license": "MIT",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Creature Generator for WEFA app",
+  "repository": {
+    "url": "https://github.com/wefa-tech/openar/packages/creature-generator"
+  },
+  "keywords": [
+    "stable-difusion",
+    "python",
+    "ai",
+    "generator"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "docker:build": "docker build -t wefa-creature-generator .",
+    "docker:run": "docker run -e PORT:$PORT wefa-creature-generator",
+    "docker:build:gpu": "docker build -t wefa-creature-generator-gpu -f Dockerfile.gpu .",
+    "docker:run:gpu": "docker run -p 8081:8081 wefa-creature-generator-gpu"
+  }
+}

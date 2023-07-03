@@ -1,0 +1,8 @@
+build
+coverage
+.vscode
+secret_key
+generated.ts
+data/
+
+cert/

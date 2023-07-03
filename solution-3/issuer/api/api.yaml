@@ -1,0 +1,794 @@
+openapi: 3.1.0
+info:
+  title: Polygon ID - Issuer
+  description: |
+    Documentation for the Issuer
+  version: "1"
+
+servers:
+  - description: Local
+    url: http://localhost:3001
+
+tags:
+  - name: Identity
+    description: Collection of endpoints related to Identity
+  - name: Claim
+    description: Collection of endpoints related to Claims
+  - name: Agent
+    description: Collection of endpoints related to Mobile
+
+paths:
+  /:
+    get:
+      summary: Get the documentation
+      operationId: GetDocumentation
+      x-internal: true
+      responses:
+        200:
+          description: success and returns the documentation in HTML format
+
+  /favicon.ico:
+    get:
+      summary: Gets the favicon
+      operationId: GetFavicon
+      x-internal: true
+      responses:
+        200:
+          description: success and returns a favicon
+
+  /static/docs/api/api.yaml:
+    get:
+      summary: Get the documentation yaml file
+      operationId: GetYaml
+      x-internal: true
+      responses:
+        200:
+          description: success and returns the documentation in Yaml format
+
+  /status:
+    get:
+      summary: Healthcheck
+      operationId: Health
+      responses:
+        '200':
+          description: All services are running
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+        '500':
+          $ref: '#/components/responses/500'
+#identity:
+  /v1/identities:
+    post:
+      summary: Create Identity
+      operationId: CreateIdentity
+      description: Endpoint to create an identity
+      tags:
+        - Identity
+      security:
+        - basicAuth: [ ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateIdentityRequest'
+      responses:
+        '201':
+          description: Identity created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateIdentityResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500-CreateIdentity'
+    get:
+      summary: Get Identities
+      operationId: GetIdentities
+      description: Endpoint to get all the identities
+      tags:
+        - Identity
+      security:
+        - basicAuth: [ ]
+      responses:
+        '200':
+          description: all good
+          content:
+            application/json:
+              schema:
+                type: array
+                x-omitempty: false
+                items:
+                  type: string
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+
+  /v1/{identifier}/state/publish:
+    post:
+      summary: Publish Identity State
+      operationId: PublishIdentityState
+      description: Endpoint to publish identity state
+      tags:
+        - Identity
+      security:
+        - basicAuth: [ ]
+      parameters:
+        - $ref: '#/components/parameters/pathIdentifier'
+      responses:
+        '200':
+          description: No transactions to process to the given identity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericErrorMessage'
+        '202':
+          description: Transaction ID of the published  state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublishIdentityStateResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+
+  #claims:
+  /v1/{identifier}/claims:
+    post:
+      summary: Create Claim
+      operationId: CreateClaim
+      description: Endpoint to create a Claim
+      tags:
+        - Claim
+      security:
+        - basicAuth: [ ]
+      parameters:
+        - $ref: '#/components/parameters/pathIdentifier'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateClaimRequest'
+      responses:
+        '201':
+          description: Claim created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateClaimResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '422':
+          $ref: '#/components/responses/422'
+        '500':
+          $ref: '#/components/responses/500'
+    get:
+      summary: Get Claims
+      operationId: GetClaims
+      description: |
+        Endpoint to retrieve claims 
+        > ⚠️ **self** and **subject** filter cannot be used together
+      tags:
+        - Claim
+      security:
+        - basicAuth: [ ]
+      parameters:
+        - $ref: '#/components/parameters/pathIdentifier'
+        - in: query
+          name: schemaType
+          schema:
+            type: string
+          description: Filter per schema type. Example - KYCAgeCredential
+        - in: query
+          name: schemaHash
+          schema:
+            type: string
+          description: Filter per schema hash. Example - c9b2370371b7fa8b3dab2a5ba81b6838
+        - in: query
+          name: subject
+          schema:
+            type: string
+          description: Filter per subject. Example - did:polygonid:polygon:mumbai:2qE1BZ7gcmEoP2KppvFPCZqyzyb5tK9T6Gec5HFANQ
+        - in: query
+          name: revoked
+          schema:
+            type: boolean
+          description: Filter per claims revoked or not - Example - true.
+        - in: query
+          name: self
+          schema:
+            type: boolean
+          description: Filter per retrieve claims of the provided identifier. Example - true
+        - in: query
+          name: query_field
+          schema:
+            type: string
+          description: Filter this field inside the data of the claim
+        - in: query
+          name: query_value
+          schema:
+            type: string
+          description: Filter this value inside the data of the claim for the specified field in query_field
+      responses:
+        '200':
+          description: Claims found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetClaimsResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /v1/{identifier}/claims/{id}:
+    get:
+      summary: Get Claim
+      operationId: GetClaim
+      description: Endpoint to retrieve a created Claim
+      tags:
+        - Claim
+      security:
+        - basicAuth: [ ]
+      parameters:
+        - $ref: '#/components/parameters/pathIdentifier'
+        - $ref: '#/components/parameters/pathClaim'
+      responses:
+        '200':
+          description: Claim found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetClaimResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /v1/{identifier}/claims/revoke/{nonce}:
+    post:
+      summary: Revoke Claim
+      operationId: RevokeClaim
+      description: Endpoint to revoke a claim
+      tags:
+        - Claim
+      security:
+        - basicAuth: [ ]
+      parameters:
+        - $ref: '#/components/parameters/pathIdentifier'
+        - $ref: '#/components/parameters/pathNonce'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RevokeClaimResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+  /v1/{identifier}/claims/revocation/status/{nonce}:
+    get:
+      summary: Get Revocation Status
+      operationId: GetRevocationStatus
+      description: Endpoint to get the revocation status
+      tags:
+        - Claim
+      parameters:
+        - $ref: '#/components/parameters/pathIdentifier'
+        - $ref: '#/components/parameters/pathNonce'
+      responses:
+        '200':
+          description: Proof
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RevocationStatusResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '500':
+          $ref: '#/components/responses/500'
+  /v1/{identifier}/claims/{id}/qrcode:
+    get:
+      summary: Get Claim QR code
+      operationId: GetClaimQrCode
+      description: Returns a a json that can be used to create the QR Code to scan for accepting a claim.
+      tags:
+        - Claim
+      security:
+        - basicAuth: [ ]
+      parameters:
+        - $ref: '#/components/parameters/pathIdentifier'
+        - $ref: '#/components/parameters/pathClaim'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetClaimQrCodeResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+#agent
+  /v1/agent:
+    post:
+      summary: Agent
+      operationId: Agent
+      description: Mobile agent endpoint
+      tags:
+        - Agent
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+              example: jwz-token
+      responses:
+        '200':
+          description: TBD
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '500':
+          $ref: '#/components/responses/500'
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+
+  schemas:
+    Health:
+      type: object
+      x-omitempty: false
+      additionalProperties:
+        type: boolean
+
+
+    GenericErrorMessage:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          example: 'Something happen'
+
+    #identity
+    CreateIdentityRequest:
+      type: object
+      required:
+        - didMetadata
+      properties:
+        didMetadata:
+          type: object
+          required:
+            - method
+            - blockchain
+            - network
+          properties:
+            method:
+              type: string
+              x-omitempty: false
+              example: "polygonid"
+            blockchain:
+              type: string
+              x-omitempty: false
+              example: "polygon"
+            network:
+              type: string
+              x-omitempty: false
+              example: "mumbai"
+
+    CreateIdentityResponse:
+      type: object
+      required:
+        - identity
+        - status
+      properties:
+        identifier:
+          type: string
+        state:
+          $ref: '#/components/schemas/IdentityState'
+
+    IdentityState:
+      type: object
+      required:
+        - stateID
+        - identifier
+        - status
+        - modifiedAt
+        - createdAt
+      properties:
+        stateID:
+          type: integer
+          format: int64
+          x-go-json-ignore: true
+        identifier:
+          type: string
+          x-go-json-ignore: true
+        state:
+          type: string
+        rootOfRoots:
+          type: string
+        claimsTreeRoot:
+          type: string
+        revocationTreeRoot:
+          type: string
+        blockTimestamp:
+          type: integer
+        blockNumber:
+          type: integer
+        txID:
+          type: string
+        previousState:
+          type: string
+        status:
+          type: string
+        modifiedAt:
+          type: string
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+
+    PublishIdentityStateResponse:
+      type: object
+      properties:
+        txID:
+          type: string
+        claimsTreeRoot:
+          type: string
+        state:
+          type: string
+        revocationTreeRoot:
+          type: string
+        rootOfRoots:
+          type: string
+
+    #claims
+    CreateClaimRequest:
+      type: object
+      required:
+        - credentialSchema
+        - type
+        - credentialSubject
+      properties:
+        credentialSchema:
+          type: string
+          x-omitempty: false
+        type:
+          type: string
+          x-omitempty: false
+        credentialSubject:
+          type: object
+          x-omitempty: false
+        expiration:
+          type: integer
+          format: int64
+        version:
+          type: integer
+          format: uint32
+        revNonce:
+          type: integer
+          format: uint64
+        subjectPosition:
+          type: string
+        merklizedRootPosition:
+          type: string
+      example:
+        credentialSchema: "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json/KYCAgeCredential-v3.json"
+        type: "KYCAgeCredential"
+        credentialSubject:
+          id: "fill with did"
+          birthday: 19960424
+          documentType: 2
+        expiration: 1903357766
+
+    CreateClaimResponse:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          x-omitempty: false
+
+    GetClaimsResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/GetClaimResponse'
+
+    GetClaimResponse:
+      type: object
+      required:
+        - id
+        - "@context"
+        - type
+        - credentialSubject
+        - credentialStatus
+        - issuer
+        - credentialSchema
+        - proof
+      properties:
+        id:
+          type: string
+          x-omitempty: false
+        "@context":
+          type: array
+          x-omitempty: false
+          items:
+            type: string
+        type:
+          type: array
+          x-omitempty: false
+          items:
+            type: string
+        expiration:
+          type: string
+          format: date-time
+        issuanceDate:
+          type: string
+          format: date-time
+        credentialSubject:
+          type: object
+          x-omitempty: false
+        credentialStatus:
+          type: null
+        issuer:
+          type: string
+          x-omitempty: false
+        credentialSchema:
+          $ref: '#/components/schemas/CredentialSchema'
+          x-omitempty: false
+        proof:
+          type: null
+
+    GetClaimQrCodeResponse:
+      type: object
+      required:
+        - body
+        - id
+        - typ
+        - type
+        - thid
+        - from
+        - to
+      properties:
+        id:
+          type: string
+        typ:
+          type: string
+        type:
+          type: string
+        thid:
+          type: string
+        body:
+          type: object
+          required:
+            - url
+            - credentials
+          properties:
+            url:
+              type: string
+            credentials:
+              type: array
+              items:
+                type: object
+                required:
+                  - id
+                  - description
+                properties:
+                  id:
+                    type: string
+                  description:
+                    type: string
+        from:
+          type: string
+        to:
+          type: string
+
+
+    CredentialSchema:
+      type: object
+      required:
+        - id
+        - type
+      properties:
+        id:
+          type: string
+          x-omitempty: false
+        type:
+          type: string
+          x-omitempty: false
+
+    RevokeClaimResponse:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          x-omitempty: false
+          example: pending
+
+    RevocationStatusResponse:
+      type: object
+      required:
+        - issuer
+        - mtp
+      properties:
+        issuer:
+          type: object
+          properties:
+            state:
+              type: string
+            rootOfRoots:
+              type: string
+            claimsTreeRoot:
+              type: string
+            revocationTreeRoot:
+              type: string
+        mtp:
+          type: object
+          required:
+            - existence
+          properties:
+            existence:
+              type: boolean
+            siblings:
+              type: array
+              x-omitempty: false
+              items:
+                type: string
+
+            node_aux:
+              type: object
+              properties:
+                key:
+                  type: string
+                value:
+                  type: string
+
+    ByteArray:
+      type: string
+      format: byte
+
+    #Agent
+    AgentResponse:
+      type: object
+      required:
+        - body
+        - id
+        - typ
+        - type
+        - threadID
+        - from
+        - to
+      properties:
+        id:
+          type: string
+        typ:
+          type: string
+        type:
+          type: string
+        threadID:
+          type: string
+        body:
+          type: null
+        from:
+          type: string
+        to:
+          type: string
+
+  parameters:
+    pathIdentifier:
+      name: identifier
+      in: path
+      required: true
+      description: Issuer identifier
+      schema:
+        type: string
+    pathClaim:
+      name: id
+      in: path
+      required: true
+      description: Claim identifier
+      schema:
+        type: string
+    pathNonce:
+      name: nonce
+      in: path
+      required: true
+      description: Claim nonce
+      schema:
+        type: integer
+        format: int64
+
+
+  responses:
+    '400':
+      description: 'Bad Request'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericErrorMessage'
+    '401':
+      description: 'Unauthorized'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericErrorMessage'
+    '402':
+      description: 'Payment Required'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericErrorMessage'
+    '404':
+      description: 'Not found'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericErrorMessage'
+    '407':
+      description: 'Proxy Authentication Required'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericErrorMessage'
+    '422':
+      description: 'Unprocessable Content'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericErrorMessage'
+    '500':
+      description: 'Internal Server error'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericErrorMessage'
+    '500-CreateIdentity':
+      description: 'Internal Server error'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              requestID:
+                type: string
+              code:
+                type: integer
+              error:
+                type: string

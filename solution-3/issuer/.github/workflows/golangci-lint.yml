@@ -1,0 +1,28 @@
+name: golangci-lint
+on:
+  push:
+    branches:
+      - "*"
+
+permissions:
+  contents: read
+
+jobs:
+  golangci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-go@v3
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Create .env-api, .env-issuer and .env-ui files
+        run: |
+          touch .env-api
+          touch .env-issuer
+          touch .env-ui
+
+      - name: Run golangci-lint
+        run: make lint
