@@ -46,11 +46,8 @@ We suggest you to start with the below videos to gain some ideas about the follo
 
 🚪 **Join here** : [zkBuilders](https://t.me/zkPowerBuilders)  post your doubts and quries here ✨
 
-The information provided in this form will be handled according to the Polygon ID Privacy Policy and may be used for marketing purposes [Here is to the privacy policy](https://polygon.technology/polygon-id/privacy-policy#:~:text=We%20do%20not%20collect%20or,any%20information%20with%20third%20parties)
-
-By participating, you agree to the IDThon [Terms and Conditions](https://github.com/Polygon-Advocates/idThon/blob/main/IDthon%20-%20Terms%20and%20Conditions.md)
-
-
+**Please Note:**
+The information provided in this form will be handled in accordance with the Polygon ID Privacy Policy available [here](https://polygon.technology/polygon-id/privacy-policy#:~:text=We%20do%20not%20collect%20or,any%20information%20with%20third%20parties) and may be used for marketing purposes. By submitting this form, you agree to the IDThon Terms and Conditions available [here](https://github.com/Polygon-Advocates/idThon/blob/main/IDthon%20-%20Terms%20and%20Conditions.md).
 
 ---
 
