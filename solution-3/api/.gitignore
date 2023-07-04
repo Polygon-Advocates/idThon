@@ -4,5 +4,6 @@ coverage
 secret_key
 generated.ts
 data/
+keys.json
 
 cert/

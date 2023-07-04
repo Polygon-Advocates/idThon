@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import fastify from "fastify";
-import { FastifyRedis } from "@fastify/redis";
 // import { Multipart } from '@fastify/multipart';
 
 declare module "fastify" {
@@ -10,11 +9,6 @@ declare module "fastify" {
     nonce?: string;
     currentChallenge?: string;
   }
-
-  export interface FastifyInstance {
-    redis: FastifyRedis;
-  }
-
   // export interface FastifyRequest {
   //   file?: Multipart
   // }

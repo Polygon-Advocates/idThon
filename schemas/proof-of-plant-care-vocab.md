@@ -22,6 +22,14 @@ Boolean value that indicates if the plant can claim credit for the care
   "canClaimCredit": true
 ```
 
+# health
+
+Health of the plant in a range of 0-100
+
+```
+  "health": "100"
+```
+
 # image
 
 Plant image that the credential is based upon that has health verified
