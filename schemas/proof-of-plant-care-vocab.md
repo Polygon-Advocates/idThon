@@ -1,3 +1,11 @@
+# plantDid
+
+DiD for the plant being cared for
+
+```
+  "plantDid": "did:example:123456789abcdefghi"
+```
+
 # spaceDid
 
 DiD for the physical space the plant occupies
@@ -6,12 +14,28 @@ DiD for the physical space the plant occupies
   "spaceDid": "did:example:123456789abcdefghi"
 ```
 
+# canClaimCredit
+
+Boolean value that indicates if the plant can claim credit for the care
+
+```
+  "canClaimCredit": true
+```
+
 # image
 
-Plant image that the credential is based upon
+Plant image that the credential is based upon that has health verified
 
 ```
   "image": "https://storge.io/123"
+```
+
+# plantDate
+
+The date the plant was planted in milliseconds
+
+```
+  "plantDate": "123456789"
 ```
 
 # longitude
@@ -36,20 +60,4 @@ The scientific name of the plant
 
 ```
   "scientificName": "plantus"
-```
-
-# projectEndDate
-
-The date the project ends in milliseconds
-
-```
-  "projectEndDate": "123456789"
-```
-
-# plantDate
-
-The date the plant was planted in milliseconds
-
-```
-  "plantDate": "123456789"
 ```

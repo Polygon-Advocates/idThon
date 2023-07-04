@@ -3,8 +3,8 @@
   "type": "object",
   "$metadata": {
     "uris": {
-      "jsonLdContext": "https://raw.githubusercontent.com/0xPolygonID/issuer-node/main/docs/examples/schemas/json-ld/exampleEmployee.json-ld",
-      "jsonSchema": "https://raw.githubusercontent.com/0xPolygonID/issuer-node/main/docs/examples/schemas/json/exampleEmployee.json"
+      "jsonLdContext": "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/schemas/proof-of-plant-care.jsonId",
+      "jsonSchema": "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/schemas/proof-of-plant-care.json"
     }
   },
   "required": [
@@ -81,28 +81,40 @@
     },
     "credentialSubject": {
       "type": "object",
-      "required": ["id", "role", "hireDate", "salary"],
+      "required": [
+        "plantDid",
+        "spaceDid",
+        "canClaimCredit",
+        "image",
+        "plantDate"
+      ],
       "properties": {
-        "id": {
-          "title": "Credential Subject ID",
+        "plantDid": {
+          "type": "string"
+        },
+        "spaceDid": {
+          "type": "string"
+        },
+        "canClaimCredit": {
+          "title": "Can claim carbon credit",
+          "type": "boolean"
+        },
+        "image": {
+          "title": "Plant image verifying care",
           "type": "string",
           "format": "uri"
         },
-        "role": {
-          "type": "string"
-        },
-        "codingExperience": {
-          "type": "boolean"
-        },
-        "hireDate": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "birthday": {
+        "plantDate": {
           "type": "integer"
         },
-        "salary": {
-          "type": "number"
+        "longitude": {
+          "type": "integer"
+        },
+        "latitude": {
+          "type": "integer"
+        },
+        "scientificName": {
+          "type": "string"
         }
       }
     }

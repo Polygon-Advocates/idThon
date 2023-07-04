@@ -1,0 +1,53 @@
+{
+  "@context": [
+    {
+      "@version": 1.1,
+      "@protected": true,
+      "id": "@id",
+      "type": "@type",
+      "ProofOfPlantCare": {
+        "@id": "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/credential-schemas/plant-care/proof-of-plant-care.jsonld#ProofOfPlantCare",
+        "@context": {
+          "@version": 1.1,
+          "@protected": true,
+          "id": "@id",
+          "type": "@type",
+          "vocab": "https://github.com/wefa-tech/idThon/blob/Oba-One_idThon/credential-schema/proof-of-plant-care-vocab.md#",
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "plantDid": {
+            "@id": "vocab:plantDid",
+            "@type": "xsd:string"
+          },
+          "spaceDid": {
+            "@id": "vocab:spaceDid",
+            "@type": "xsd:string"
+          },
+          "canClaimCredit": {
+            "@id": "vocab:canClaimCredit",
+            "@type": "xsd:boolean"
+          },
+          "image": {
+            "@id": "vocab:image",
+            "@type": "xsd:string"
+          },
+          "plantDate": {
+            "@id": "vocab:plantDate",
+            "@type": "xsd:integer"
+          },
+          "longitude": {
+            "@id": "vocab:longitude",
+            "@type": "xsd:integer"
+          },
+          "latitude": {
+            "@id": "vocab:latitude",
+            "@type": "xsd:integer"
+          },
+          "scientificName": {
+            "@id": "vocab:scientificName",
+            "@type": "xsd:string"
+          }
+        }
+      }
+    }
+  ]
+}
