@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { config, SpringValue, useSpring } from "@react-spring/web";
 
-import { useWefa } from "../wefa/useWefa";
+import { useWefa } from "../plants/usePlants";
 
 export const height = window.innerHeight - 24;
 
@@ -14,7 +14,6 @@ export interface DeckDataProps {
   tabsSpring: {
     transform: SpringValue<string>;
   };
-  creatures: Creature[];
   tab: DeckTab;
   changeTab: (tab: DeckTab) => void;
 }
@@ -24,7 +23,7 @@ export type DeckTab = "plants" | "creatures";
 export const useDeck = (): DeckDataProps => {
   const [tab, setTab] = useState<DeckTab>("plants");
 
-  const { plants, creatures } = useWefa();
+  const { plants } = useWefa();
 
   const statsSpring = useSpring({
     from: { opacity: 0, transform: "translate3d(0, -100%, 0)" },
@@ -50,7 +49,6 @@ export const useDeck = (): DeckDataProps => {
 
   return {
     plants,
-    creatures,
     statsSpring,
     tabsSpring,
     tab,

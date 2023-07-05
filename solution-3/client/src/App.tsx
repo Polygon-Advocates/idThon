@@ -7,8 +7,8 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { config, chains } from "./modules/wagmi";
 
 import { AppProvider } from "./hooks/app/useApp";
-import { WefaProvider } from "./hooks/wefa/useWefa";
-import { SeedProvider } from "./hooks/wefa/useSeed";
+import { PlantsProvider } from "./hooks/plants/usePlants";
+import { PlantVerifierProvider } from "./hooks/plants/usePlantVerifier";
 
 import { Appbar } from "./components/Layout/AppBar";
 import { Header } from "./components/Layout/Header";
@@ -23,8 +23,8 @@ function App() {
         <RainbowKitProvider chains={chains}>
           <AppProvider>
             <BrowserRouter>
-              <WefaProvider>
-                <SeedProvider>
+              <PlantsProvider>
+                <PlantVerifierProvider>
                   <Header />
                   <Appbar />
                   <Views />
@@ -35,8 +35,8 @@ function App() {
                     closeButton={false}
                     limit={4}
                   />
-                </SeedProvider>
-              </WefaProvider>
+                </PlantVerifierProvider>
+              </PlantsProvider>
             </BrowserRouter>
           </AppProvider>
         </RainbowKitProvider>

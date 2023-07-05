@@ -5,10 +5,6 @@ interface WEFADB extends DBSchema {
     key: string;
     value: Plant;
   };
-  creatures: {
-    key: string;
-    value: Creature;
-  };
 }
 
 export let db: IDBPDatabase<WEFADB> | undefined;
@@ -29,9 +25,6 @@ export async function initDB() {
     db = await openDB<WEFADB>("wefa", 1, {
       upgrade(db) {
         db.createObjectStore("plants", {
-          keyPath: "id",
-        });
-        db.createObjectStore("creatures", {
           keyPath: "id",
         });
       },
@@ -63,13 +56,6 @@ export async function createPlant(plant: Plant) {
   await store?.put(plant);
 }
 
-export async function createCreature(creature: Creature) {
-  const db = await initDB();
-  const transaction = db?.transaction("creatures", "readwrite");
-  const store = transaction?.objectStore("creatures");
-  await store?.put(creature);
-}
-
 export async function readPlants() {
   const db = await initDB();
   const transaction = db?.transaction("plants", "readonly");
@@ -84,17 +70,6 @@ export async function readPlants() {
   return data;
 }
 
-export async function readCreatures() {
-  const db = await initDB();
-  const transaction = db?.transaction("creatures", "readonly");
-  const store = transaction?.objectStore("creatures");
-  const data = await store?.getAll();
-
-  if (!data) return [];
-
-  return data;
-}
-
 export async function updatePlant(plant: Plant) {
   const db = await initDB();
   const transaction = db?.transaction("plants", "readwrite");
@@ -102,23 +77,9 @@ export async function updatePlant(plant: Plant) {
   await store?.put(plant);
 }
 
-export async function updateCreature(creature: Creature) {
-  const db = await initDB();
-  const transaction = db?.transaction("creatures", "readwrite");
-  const store = transaction?.objectStore("creatures");
-  await store?.put(creature);
-}
-
 export async function deletePlant(id: string) {
   const db = await initDB();
   const transaction = db?.transaction("plants", "readwrite");
   const store = transaction?.objectStore("plants");
-  await store?.delete(id);
-}
-
-export async function deleteCreature(id: string) {
-  const db = await initDB();
-  const transaction = db?.transaction("creatures", "readwrite");
-  const store = transaction?.objectStore("creatures");
   await store?.delete(id);
 }

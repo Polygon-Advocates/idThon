@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { a } from "@react-spring/web";
 
 import { useApp } from "../../hooks/app/useApp";
-import { useWefa } from "../../hooks/wefa/useWefa";
+import { useWefa } from "../../hooks/plants/usePlants";
 import { DeckDataProps, DeckTab } from "../../hooks/views/useDeck";
 
 import { DeckItems } from "../../components/Deck/Items";

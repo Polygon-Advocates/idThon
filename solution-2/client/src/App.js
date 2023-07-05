@@ -4,19 +4,17 @@ import PolygonIDVerifier from "./PolygonIDVerifier";
 import { Center, Card, Image, CardBody, Container } from "@chakra-ui/react";
 
 function App() {
-  // if you're developing and just want to see the dapp without going through the Polygon ID flow,
-  // temporarily set this to "true" to ignore the Polygon ID check and go straight to the dapp page
   const [provedBornBefore2000, setProvedBornBefore2000] = useState(false);
+
   return (
     <Center className="vc-check-page">
       <Container>
-        <Card
-          style={{
-            border: "2px solid #805AD5",
-          }}
-        >
+        <Card>
           <CardBody style={{ paddingBottom: 0 }}>
-            <p>Prove you were born before January 1, 2000 to use the dapp</p>
+            <p>
+              Prove you were born before January 1, 2000 and see where Childish
+              Gambino got his inspiration for Redbone, stay woke! 👀
+            </p>
 
             <PolygonIDVerifier
               publicServerURL={

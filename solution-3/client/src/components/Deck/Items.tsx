@@ -6,7 +6,7 @@ import { DeckViewerData } from "./Viewer";
 interface DeckItemsProps {
   type: "plants" | "creatures";
   isDesktop: boolean;
-  items: (Plant | Creature)[];
+  items: Plant[];
   openSheet: ({ data }: { data?: DeckViewerData }) => void;
 }
 
@@ -28,25 +28,17 @@ export const DeckItems: React.FC<DeckItemsProps> = ({
       {items.map((item, index) => {
         const badges: Badge[] = [];
 
-        if ("trainer" in item) {
+        item.edible_parts?.length &&
+          badges.push({ name: "Edible", color: "#15803d" });
+        item.structured_name?.species &&
           badges.push({
-            name: elementData[item.element].name,
-            color: elementData[item.element].color,
-            Icon: elementData[item.element].Icon,
+            name: item.structured_name.species,
           });
-        } else {
-          item.edible_parts?.length &&
-            badges.push({ name: "Edible", color: "#15803d" });
-          item.structured_name?.species &&
-            badges.push({
-              name: item.structured_name.species,
-            });
-          item.structured_name?.genus &&
-            badges.push({
-              name: item.structured_name.genus,
-            });
-          // Watering
-        }
+        item.structured_name?.genus &&
+          badges.push({
+            name: item.structured_name.genus,
+          });
+        // Watering
 
         return (
           <DeckCard

@@ -1,4 +1,4 @@
-import { SeedDataProps, useSeed } from "../wefa/useSeed";
+import { SeedDataProps, useSeed } from "../plants/usePlantVerifier";
 
 export interface ExploreDataProps extends SeedDataProps {}
 

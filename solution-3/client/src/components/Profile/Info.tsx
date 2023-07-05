@@ -4,7 +4,6 @@ import { useApp } from "../../hooks/app/useApp";
 
 interface ProfileInfoProps {
   username?: string;
-  rank?: WefaRank;
   xp?: number;
   avatar?: string;
   avatarSpring: {
@@ -14,9 +13,6 @@ interface ProfileInfoProps {
 }
 
 export const ProfileInfo: React.FC<ProfileInfoProps> = ({
-  // username,
-  // xp,
-  // rank,
   avatar,
   avatarSpring,
 }) => {
