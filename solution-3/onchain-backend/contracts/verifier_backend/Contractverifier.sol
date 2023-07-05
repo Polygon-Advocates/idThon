@@ -6,6 +6,8 @@ import "./verifiers/ZKPVerifier.sol";
 
 contract verify is ZKPVerifier {
     uint64 public constant TRANSFER_REQUEST_ID = 1;
+    mapping(uint256 => address) public idToAddress;
+    mapping(address => uint256) public addressToId;
 
     /**
      * @dev _beforeProofSubmit
@@ -36,6 +38,10 @@ contract verify is ZKPVerifier {
         );
 
         uint256 id = inputs[validator.getChallengeInputIndex()];
+        if (idToAddress[id] == address(0)) {
+            addressToId[_msgSender()] = id;
+            idToAddress[id] = _msgSender();
+        }
         return true;
     }
 }
