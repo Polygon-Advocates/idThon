@@ -26,12 +26,7 @@ server.register(session, {
     maxAge: 86400000, // 1 day
     httpOnly: true,
   },
-  // store: new RedisStore({
-  //   client: redis,
-  //   prefix: "wefa:",
-  // }) as SessionStore,
 });
-server.register(require("@fastify/multipart"));
 
 // Router
 server.register(router);

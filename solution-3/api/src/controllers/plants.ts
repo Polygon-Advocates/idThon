@@ -1,32 +1,12 @@
-import { format } from "url";
 import fetch from "node-fetch";
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 
-import { bucket } from "../modules/gcp";
 import { detectPlantHealth } from "../modules/plant";
-
-export const uploadImage = (file: any) =>
-  new Promise((resolve, reject) => {
-    const { originalname, buffer } = file;
-
-    const blob = bucket.file(originalname.replace(/ /g, "_"));
-    const blobStream = blob.createWriteStream({
-      resumable: false,
-    });
-    blobStream
-      .on("finish", () => {
-        const publicUrl = format(`https://storage.googleapis.com/${bucket.name}/${blob.name}`);
-        resolve(publicUrl);
-      })
-      .on("error", () => {
-        reject(`Unable to upload image, something went wrong`);
-      })
-      .end(buffer);
-  });
 
 export default async function plantController(fastify: FastifyInstance) {
   fastify.post("/verify", async function (req: FastifyRequest, reply: FastifyReply) {
     const body = req.body as {
+      address: string;
       plantDId: string;
       spaceDId: string;
       image: string;
@@ -35,30 +15,38 @@ export default async function plantController(fastify: FastifyInstance) {
     };
 
     try {
+      if (!body.address || !body.image || !body.plantDId || !body.spaceDId) {
+        throw new Error("Missing required fields");
+      }
+
       // GET PLANT INPUTS
       const health = await detectPlantHealth(body.image);
 
       // HIT CREDENTIAL MICROSERVICE
-      // Generate intial claim for plant
-      // Check metadata of image
-      // Associate claim with DiD which may be 3 types
-      // Key local based, Device, and Blockchain
-      // Return claim/proof to client
+      const identifier = `did:polygonid:polygon:mumbai:${body.address}`;
 
-      const claim = fetch(process.env.ISSUER_SERVICE_URL ?? "", {
+      const claimRes = await fetch(`${process.env.ISSUER_SERVICE_URL ?? ""}/v1/${identifier}/claims`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          plantDId: body.plantDId,
-          spaceDId: body.spaceDId,
-          longitude: body.longitude,
-          latitude: body.latitude,
-          scientificName: health?.suggestions[0].plant_name,
-          canClaimCredit: true,
+          credentialSchema:
+            "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/schemas/proof-of-plant-care.json",
+          type: "ProofOfPlantCare",
+          credentialSubject: {
+            plantDId: body.plantDId,
+            spaceDId: body.spaceDId,
+            longitude: body.longitude,
+            latitude: body.latitude,
+            scientificName: health?.suggestions[0].plant_name,
+            canClaimCredit: true,
+          },
+          expiration: 1903357766,
         }),
       });
+
+      const claim = await claimRes.json();
 
       reply.send({ health, claim });
     } catch (error) {
