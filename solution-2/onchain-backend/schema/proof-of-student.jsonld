@@ -1,0 +1,25 @@
+{
+  "@context": [
+    {
+      "@version": 1.1,
+      "@protected": true,
+      "id": "@id",
+      "type": "@type",
+      "Student ID": {
+        "@id": "https://raw.githubusercontent.com/guha-rahul/Id_Thon/main/backend/schema/proof-of-student.jsonld",
+        "@context": {
+          "@version": 1.1,
+          "@protected": true,
+          "id": "@id",
+          "type": "@type",
+          "vocab": "https://github.com/guha-rahul/Id_Thon/blob/main/backend/schema/proof-of-student-vocab.md",
+          "serialization": "https://github.com/iden3/claim-schema-vocab/blob/main/credentials/serialization.md#",
+          "Join Date": {
+            "@id": "vocab:Join Date",
+            "@type": "serialization:IndexDataSlotA"
+          }
+        }
+      }
+    }
+  ]
+}
