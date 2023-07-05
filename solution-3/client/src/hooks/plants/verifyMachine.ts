@@ -5,7 +5,7 @@ import { apiClient } from "../../modules/axios";
 import { db, initDB } from "../../modules/idb";
 
 export interface PlantVerifierContext {
-  address?: `0x${string}`;
+  did?: `0x${string}`;
   image: string | null;
   imageVerified: boolean;
   plant: PlantDetails | null;
@@ -46,6 +46,10 @@ export const seedMachine = createMachine(
           SELECT_PLANT: {
             target: "verifying_plant",
             cond: "isPhotoValid",
+          },
+          SET_DID: {
+            target: "idle",
+            actions: "setDid",
           },
         },
       },
@@ -129,20 +133,10 @@ export const seedMachine = createMachine(
           throw new Error("No image provided!");
         }
 
-        // TODO: Add form image upload
-        // const formData = new FormData();
-
-        // formData.append("image", image, image.name);
-
-        // const data = {
-        //   // Add other parameters here
-        // };
-        // formData.append("data", JSON.stringify(data));
-
         try {
           const { data } = await apiClient.post<{ plant: PlantHealth }>(
-            "/plants/detect",
-            { image }
+            "/plants/verify",
+            { image, userDid: context.did, plantDId: "", spaceDId: "" }
           );
 
           return {

@@ -10,7 +10,6 @@ import {
 } from "./verifyMachine";
 
 export interface PlantVerifierDataProps extends PlantVerifierMachineContext {
-  plantingState: boolean;
   isDetecting: boolean;
   verifyHealth: (image: string | ArrayBuffer) => void;
   reset: () => void;
@@ -31,6 +30,11 @@ export const PlantVerifierProvider = ({ children }: Props) => {
   const { handleCreatePlant } = usePlants();
   const [state, send] = useMachine(seedMachine, {
     actions: {
+      setDid: assign((context, event) => {
+        // @ts-ignore
+        context.did = event.data.did;
+        return context;
+      }),
       verified: assign((context, event) => {
         context.imageVerified = true;
         context.image = event.data.img;
@@ -69,11 +73,11 @@ export const PlantVerifierProvider = ({ children }: Props) => {
     },
   });
 
-  const plantingState =
-    state.matches("idle") ||
-    state.matches("plant_verified") ||
-    state.matches("verifying_plant");
   const isDetecting = state.matches("verifying_plant");
+
+  function setDid(did: string) {
+    send({ type: "SET_DID", did });
+  }
 
   function verifyHealth(image: string | ArrayBuffer) {
     send({ type: "SELECT_PLANT", image });
@@ -86,7 +90,6 @@ export const PlantVerifierProvider = ({ children }: Props) => {
   return (
     <PlantVerifierContext.Provider
       value={{
-        plantingState,
         isDetecting,
         verifyHealth,
         reset,

@@ -18,13 +18,14 @@ export interface Typegen0 {
     plantVerifier: "done.invoke.plantVerifier";
   };
   missingImplementations: {
-    actions: "verified";
+    actions: "setDid" | "verified";
     delays: never;
     guards: never;
     services: never;
   };
   eventsCausingActions: {
     error: "error.platform.plantVerifier";
+    setDid: "SET_DID";
     verified: "done.invoke.plantVerifier";
   };
   eventsCausingDelays: {};

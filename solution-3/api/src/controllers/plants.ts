@@ -6,7 +6,7 @@ import { detectPlantHealth } from "../modules/plant";
 export default async function plantController(fastify: FastifyInstance) {
   fastify.post("/verify", async function (req: FastifyRequest, reply: FastifyReply) {
     const body = req.body as {
-      address: string;
+      userDid: string;
       plantDId: string;
       spaceDId: string;
       image: string;
@@ -15,7 +15,7 @@ export default async function plantController(fastify: FastifyInstance) {
     };
 
     try {
-      if (!body.address || !body.image || !body.plantDId || !body.spaceDId) {
+      if (!body.userDid || !body.image || !body.plantDId || !body.spaceDId) {
         throw new Error("Missing required fields");
       }
 
@@ -23,9 +23,8 @@ export default async function plantController(fastify: FastifyInstance) {
       const health = await detectPlantHealth(body.image);
 
       // HIT CREDENTIAL MICROSERVICE
-      const identifier = `did:polygonid:polygon:mumbai:${body.address}`;
 
-      const claimRes = await fetch(`${process.env.ISSUER_SERVICE_URL ?? ""}/v1/${identifier}/claims`, {
+      const claimRes = await fetch(`${process.env.ISSUER_SERVICE_URL ?? ""}/v1/${body.userDid}/claims`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

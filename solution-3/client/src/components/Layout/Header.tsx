@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useApp } from "../../hooks/app/useApp";
+import PolygonIDVerifier from "../PolygonIDVerifier";
 // import { useAuthWeb3 } from "../../hooks/auth/useWeb3";
 
 interface HeaderProps {}
@@ -21,6 +22,7 @@ export const Header: React.FC<HeaderProps> = () => {
         </a>
       </div>
       <div className="navbar-end flex gap-4">
+        <PolygonIDVerifier />
         <label className="swap swap-rotate" onClick={toggleTheme}>
           <svg
             className={`${
