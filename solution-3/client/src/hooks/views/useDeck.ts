@@ -18,7 +18,7 @@ export interface DeckDataProps {
   changeTab: (tab: DeckTab) => void;
 }
 
-export type DeckTab = "plants" | "creatures";
+export type DeckTab = "plants" | "settings";
 
 export const useDeck = (): DeckDataProps => {
   const [tab, setTab] = useState<DeckTab>("plants");

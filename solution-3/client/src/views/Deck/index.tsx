@@ -7,8 +7,9 @@ import { DeckDataProps, DeckTab } from "../../hooks/views/useDeck";
 import { DeckItems } from "../../components/Deck/Items";
 import { DeckStats } from "../../components/Deck/Stats";
 import { DeckViewer, DeckViewerData } from "../../components/Deck/Viewer";
+import { ProfileSettings } from "../../components/Profile/Settings";
 
-const tabs: DeckTab[] = ["plants", "creatures"];
+const tabs: DeckTab[] = ["plants", "settings"];
 
 interface DeckProps extends DeckDataProps {}
 
@@ -26,7 +27,7 @@ const Deck: React.FC<DeckProps> = ({
     name: "",
     description: "",
     image: "",
-    type: "creature",
+    type: "plant",
     actions: [],
     badges: [],
   });
@@ -80,7 +81,7 @@ const Deck: React.FC<DeckProps> = ({
               openSheet={openSheet}
             />
           )}
-          {tab === "creatures" && null}
+          {tab === "settings" && <ProfileSettings />}
         </div>
       </a.div>
       <DeckViewer {...sheetData} open={viewerOpen} onDismiss={closeSheet} />
