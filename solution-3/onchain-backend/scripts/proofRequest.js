@@ -10,11 +10,11 @@ const Operators = {
 
 async function main(date) {
   // you can run https://go.dev/play/p/rnrRbxXTRY6 to get schema hash and claimPathKey using YOUR schema
-  const schemaBigInt = "74977327600848231385663280181476307657"; //needs to be updated
+  const schemaBigInt = "117036990033008791296648003687520303998"; //needs to be updated
 
   // merklized path to field in the W3C credential according to JSONLD  schema e.g. birthday in the KYCAgeCredential under the url "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld"
   const schemaClaimPathKey =
-    "20376033832371109177683048456014525905119173674985843915445634726167450989630"; //needs to be updated
+    "3180528954093582024871553119619197542762836055779818189130788977097067609408"; //needs to be updated
 
   const requestId = 1;
 
