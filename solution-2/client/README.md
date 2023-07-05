@@ -41,9 +41,9 @@ npm install react-router-dom --legacy-peer-deps
 cp .env.sample .env;
 ```
 
-Update your .env with the VITE_VERCEL_VERIFICATION_SERVER_PUBLIC_URL variable to your hosted server ngrok url. If you're hosting in production with render, use the render url for this variable.
+Update your .env with the REACT_APP_VERIFICATION_SERVER_PUBLIC_URL variable to your hosted server ngrok url. If you're hosting in production with render, use the render url for this variable.
 
-Visit https://cloud.walletconnect.com/ and create a new project (free and takes 2m). Update VITE_VERCEL_WALLET_CONNECT_ID with the resulting Project ID.
+Visit https://cloud.walletconnect.com/ and create a new project (free and takes 2m). Update REACT_APP_WALLET_CONNECT_ID with the resulting Project ID.
 
 Quick check: Make sure you've updated these values in .env, not .env.sample 🤠
 

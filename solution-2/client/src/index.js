@@ -21,7 +21,7 @@ const { chains, publicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: "My Polygon ID VC Gated dapp",
-  projectId: process.env.VITE_VERCEL_WALLET_CONNECT_ID,
+  projectId: process.env.REACT_APP_WALLET_CONNECT_ID,
   chains,
 });
 

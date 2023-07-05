@@ -144,6 +144,8 @@ async function handleVerification(req, res) {
       sessionId,
       socketMessage("handleVerification", STATUS.DONE, authResponse)
     );
+
+    // Generate dancing Creature??
     return res
       .status(200)
       .set("Content-Type", "application/json")

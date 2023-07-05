@@ -26,16 +26,16 @@ function App() {
                   <a href="https://0xpolygonid.github.io/tutorials/#core-concepts-of-polygon-id-verifiable-credentials-identity-holder-issuer-and-verifier-triangle-of-trust">
                     (Verifiable Credential)
                   </a>{" "}
-                  gated dapp. Prove you were born before January 1, 2023 to use
+                  gated dapp. Prove you were born before January 1, 2000 to use
                   the dapp
                 </p>
 
                 <PolygonIDVerifier
                   publicServerURL={
-                    process.env.VITE_VERCEL_VERIFICATION_SERVER_PUBLIC_URL
+                    process.env.REACT_APP_VERIFICATION_SERVER_PUBLIC_URL
                   }
                   localServerURL={
-                    process.env.VITE_VERCEL_VERIFICATION_SERVER_LOCAL_HOST_URL
+                    process.env.REACT_APP_VERIFICATION_SERVER_LOCAL_HOST_URL
                   }
                   credentialType={"KYCAgeCredential"}
                   issuerOrHowToLink={
