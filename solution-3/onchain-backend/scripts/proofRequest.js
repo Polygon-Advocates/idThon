@@ -17,16 +17,16 @@ async function main(date) {
     "20376033832371109177683048456014525905119173674985843915445634726167450989630"; //needs to be updated
 
   const requestId = 1;
-  const f_date = date + 40000;
+
   const query = {
     schema: schemaBigInt,
     claimPathKey: schemaClaimPathKey,
     operator: Operators.LT, // operator
-    value: [f_date, ...new Array(63).fill(0).map((i) => 0)], // for operators 1-3 only first value matters
+    value: [20260606, ...new Array(63).fill(0).map((i) => 0)], // for operators 1-3 only first value matters
   };
 
   // add the address of the contract just deployed
-  const VerifierAddress = "<VerifierAddress>";
+  const VerifierAddress = "0x8621325fDB146bC4576CF1450fA34a16944Fe001";
 
   let Verifier = await hre.ethers.getContractAt("verify", VerifierAddress);
 
