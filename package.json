@@ -6,16 +6,6 @@
   "repository": {
     "url": "https://github.com/wefa-tech/idThon"
   },
-  "scripts": {
-    "initialize": "pnpm recursive run initialize",
-    "dev": "concurrently -n verifier,api,generator,client -c cyan,green,yellow,magenta 'cd packages/verifier && pnpm dev' 'cd packages/api && pnpm dev' 'pnpm dev:creature-generator' 'cd packages/client && pnpm dev'",
-    "dev:api": "pnpm --filter 'api' run dev",
-    "dev:client": "pnpm --filter 'client' run dev",
-    "dev:verifier": "pnpm --filter 'verifier' dev",
-    "dev:creature-generator": "cd packages/creature-generator && python3 main.py",
-    "test": "pnpm recursive run test",
-    "build": "pnpm recursive run build"
-  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.46.1",
     "@typescript-eslint/parser": "5.46.1",

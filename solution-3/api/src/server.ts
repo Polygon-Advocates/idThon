@@ -1,17 +1,12 @@
 import fs from "fs";
 import path from "path";
 import fastify from "fastify";
-// import { Multipart } from '@fastify/multipart';
 
 declare module "fastify" {
   export interface Session {
-    // username: string | null;
     nonce?: string;
     currentChallenge?: string;
   }
-  // export interface FastifyRequest {
-  //   file?: Multipart
-  // }
 }
 
 const useHttps = process.env.NODE_ENV === "development";

@@ -1,7 +1,7 @@
 import { assign } from "xstate";
 import { nanoid } from "nanoid";
 import { useMachine } from "@xstate/react";
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext } from "react";
 
 import { useWefa } from "./useWefa";
 import { SeedContext as SeedMachineContext, seedMachine } from "./seedMachine";
@@ -27,8 +27,7 @@ export const SeedProvider = ({ children }: Props) => {
   const currentValue = useContext(SeedContext);
 
   if (currentValue) throw new Error("SeedProvider can only be used once");
-  const { handleBadgeCheck, handleCreatePlant, handleCreateCreature } =
-    useWefa();
+  const { handleCreatePlant, handleCreateCreature } = useWefa();
   const [state, send] = useMachine(seedMachine, {
     actions: {
       verified: assign((context, event) => {
@@ -125,16 +124,6 @@ export const SeedProvider = ({ children }: Props) => {
   function reset() {
     send({ type: "RESET" });
   }
-
-  useEffect(() => {
-    if (state.matches("plant_verified")) {
-      handleBadgeCheck();
-    }
-
-    if (state.matches("creature_seeded")) {
-      handleBadgeCheck();
-    }
-  }, [state.value]);
 
   return (
     <SeedContext.Provider

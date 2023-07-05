@@ -6,7 +6,6 @@ import svgr from "vite-plugin-svgr";
 import mkcert from "vite-plugin-mkcert";
 import { VitePWA } from "vite-plugin-pwa";
 import react from "@vitejs/plugin-react-swc";
-// import { sentryVitePlugin } from "@sentry/vite-plugin";
 
 export default defineConfig({
   plugins: [
@@ -24,7 +23,6 @@ export default defineConfig({
         "assets/logo-310.png",
         "assets/cards.png",
         "assets/world.png",
-        "assets/profile.png",
       ],
       injectRegister: "auto",
       registerType: "autoUpdate",
@@ -83,31 +81,12 @@ export default defineConfig({
               },
             ],
           },
-          {
-            name: "Profile",
-            description: "View accomplishments and stats",
-            url: "/profile",
-            icons: [
-              {
-                src: "assets/profile.png",
-                sizes: "64x64",
-                type: "image/png",
-              },
-            ],
-          },
         ],
       },
     }),
-    // sentryVitePlugin({
-    //   org: "wefa",
-    //   project: "app",
-    //   // Auth tokens can be obtained from https://sentry.io/settings/account/api/auth-tokens/
-    //   // and need `project:releases` and `org:read` scopes
-    //   authToken: import.meta.env.SENTRY_AUTH_TOKEN,
-    // }),
   ],
   server: {
-    port: 3000,
+    port: 3003,
     fs: {
       strict: false,
     },

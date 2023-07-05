@@ -111,14 +111,14 @@
         "plantDate": {
           "type": "integer"
         },
+        "scientificName": {
+          "type": "string"
+        },
         "longitude": {
           "type": "integer"
         },
         "latitude": {
           "type": "integer"
-        },
-        "scientificName": {
-          "type": "string"
         }
       }
     }

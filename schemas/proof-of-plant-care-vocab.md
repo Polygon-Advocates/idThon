@@ -46,6 +46,14 @@ The date the plant was planted in milliseconds
   "plantDate": "123456789"
 ```
 
+# scientificName
+
+The scientific name of the plant
+
+```
+  "scientificName": "plantus"
+```
+
 # longitude
 
 The longitude location of the plant to the 7th degree
@@ -60,12 +68,4 @@ The latitude location of the plant to the 7th degree
 
 ```
   "latitude": "123456789"
-```
-
-# scientificName
-
-The scientific name of the plant
-
-```
-  "scientificName": "plantus"
 ```

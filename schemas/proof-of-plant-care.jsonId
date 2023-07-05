@@ -38,6 +38,10 @@
             "@id": "vocab:plantDate",
             "@type": "xsd:integer"
           },
+          "scientificName": {
+            "@id": "vocab:scientificName",
+            "@type": "xsd:string"
+          },
           "longitude": {
             "@id": "vocab:longitude",
             "@type": "xsd:integer"
@@ -45,10 +49,6 @@
           "latitude": {
             "@id": "vocab:latitude",
             "@type": "xsd:integer"
-          },
-          "scientificName": {
-            "@id": "vocab:scientificName",
-            "@type": "xsd:string"
           }
         }
       }
