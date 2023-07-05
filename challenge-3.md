@@ -12,7 +12,7 @@ Participate now and stand a chance to win a share of the $4500 [$1500 each team 
 
 👥 **Team Size:** Each team can consist of up to 4 members. Collaborate, synergize your skills, and create something extraordinary together!
 
-⏰ **Duration:** The hackathon will span 10 days, starting immediately and concluding at __3 PM ET on 3rd July__. Use this time wisely to develop and refine your project.
+⏰ **Duration:** The hackathon will span 10 days, starting immediately and concluding at __ **5th July 11 PM EST**__. Use this time wisely to develop and refine your project.
 
 ## **🔧 Rules:**
 
