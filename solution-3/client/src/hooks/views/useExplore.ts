@@ -1,9 +1,12 @@
-import { SeedDataProps, useSeed } from "../plants/usePlantVerifier";
+import {
+  PlantVerifierDataProps,
+  usePlantVerifier,
+} from "../plants/usePlantVerifier";
 
-export interface ExploreDataProps extends SeedDataProps {}
+export interface ExploreDataProps extends PlantVerifierDataProps {}
 
 export const useExplore = (): ExploreDataProps => {
-  const seed = useSeed();
+  const seed = usePlantVerifier();
 
   return {
     ...seed,

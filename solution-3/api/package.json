@@ -14,7 +14,7 @@
     "format": "pnpm run prettier && pnpm run lint",
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .ts,.tsx --quiet --fix",
-    "dev": "pnpm run docker:compose && bob-tsm --node-env=dev --cjs --watch=src src/index.ts",
+    "dev": "bob-tsm --node-env=dev --cjs --watch=src src/index.ts",
     "test": "cross-env jest",
     "start": "bob-tsm --node-env=prod --cjs src/index.ts"
   },

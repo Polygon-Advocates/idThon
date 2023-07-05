@@ -7,10 +7,10 @@
     "url": "https://github.com/wefa-tech/idThon/tree/Oba-One_idThon/solution-3"
   },
   "scripts": {
-    "dev": "concurrently -n issuer,verifier,api,client -c cyan,green,yellow,magenta 'pnpm dev:issuer' 'pnpm dev:verifier' 'pnpm dev:api' 'pnpm dev:client'",
+    "dev": "concurrently -n issuer,contracts,api,client -c cyan,green,yellow,magenta 'pnpm dev:issuer' 'pnpm dev:contracts' 'pnpm dev:api' 'pnpm dev:client'",
     "dev:api": "pnpm --filter 'api' run dev",
     "dev:client": "pnpm --filter 'client' run dev",
     "dev:issuer": "cd issuer && make up && make run-ui-arm",
-    "dev:verifier": "cd verifier && python3 main.py"
+    "dev:contracts": "cd contracts && npx hardhat run --network localhost scripts/deploy-verifier.ts"
   }
 }

@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { a } from "@react-spring/web";
 
 import { useApp } from "../../hooks/app/useApp";
-import { useWefa } from "../../hooks/plants/usePlants";
 import { DeckDataProps, DeckTab } from "../../hooks/views/useDeck";
 
 import { DeckItems } from "../../components/Deck/Items";
@@ -17,12 +16,10 @@ const Deck: React.FC<DeckProps> = ({
   tab,
   changeTab,
   plants,
-  creatures,
   statsSpring,
   tabsSpring,
 }) => {
   const { isDesktop } = useApp();
-  const { energy, handleFetchEnergy } = useWefa();
 
   const [viewerOpen, setViewerOpen] = useState(false);
   const [sheetData, setSheetData] = useState<DeckViewerData>({
@@ -43,10 +40,6 @@ const Deck: React.FC<DeckProps> = ({
     setViewerOpen(false);
   }
 
-  useEffect(() => {
-    handleFetchEnergy();
-  }, []);
-
   return (
     <section
       className={`overflow-hidden ${
@@ -54,7 +47,7 @@ const Deck: React.FC<DeckProps> = ({
       } deck-view flex-col justify-center`}
     >
       <a.div className="deck-stats sm:px-6 px-3 w-full" style={statsSpring}>
-        <DeckStats energy={energy} />
+        <DeckStats energy={0} />
       </a.div>
       <a.div
         style={tabsSpring}
@@ -87,14 +80,7 @@ const Deck: React.FC<DeckProps> = ({
               openSheet={openSheet}
             />
           )}
-          {tab === "creatures" && (
-            <DeckItems
-              type={tab}
-              isDesktop={isDesktop}
-              items={creatures}
-              openSheet={openSheet}
-            />
-          )}
+          {tab === "creatures" && null}
         </div>
       </a.div>
       <DeckViewer {...sheetData} open={viewerOpen} onDismiss={closeSheet} />
