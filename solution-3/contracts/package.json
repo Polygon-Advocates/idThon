@@ -1,0 +1,41 @@
+{
+  "name": "contracts",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm mud dev-contracts --tsgenOutput ../client/src/modules/openar",
+    "test": "tsc --noEmit && mud test",
+    "build": "forge clean && forge build",
+    "deploy:local": "dotenv && pnpm run initialize && mud deploy",
+    "deploy:testnet": "pnpm run initialize && mud deploy --profile=lattice-testnet"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "4.9.2",
+    "@openzeppelin/contracts-upgradeable": "^4.8.3",
+    "braces": ">=3.0.2",
+    "bs58": "^4.0.1",
+    "circomlib": "0.2.2",
+    "circomlibjs": "^0.1.7",
+    "codecov": "^3.8.2",
+    "diff": ">=5.0.0",
+    "ethereumjs-util": "^7.1.4",
+    "jsonfile": "^6.1.0",
+    "snarkjs": "^0.4.13",
+    "solidity-bytes-utils": "^0.8.0",
+    "solidity-coverage": "^0.7.18",
+    "solium": "0.1.3",
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "3.0.0",
+    "@nomicfoundation/hardhat-chai-matchers": "2.0.1",
+    "@typechain/ethers-v5": "^10.2.0",
+    "@types/node": "^18.15.11",
+    "prettier": "^2.8.4",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "hardhat": "2.16.1",
+    "solhint": "^3.3.7",
+    "typechain": "^8.1.1"
+  }
+}

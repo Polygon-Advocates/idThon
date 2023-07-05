@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/wefa-tech/idThon/solution-3"
+    "url": "https://github.com/wefa-tech/idThon/tree/Oba-One_idThon/solution-3"
   },
   "scripts": {
     "dev": "concurrently -n issuer,verifier,api,client -c cyan,green,yellow,magenta 'pnpm dev:issuer' 'pnpm dev:verifier' 'pnpm dev:api' 'pnpm dev:client'",
