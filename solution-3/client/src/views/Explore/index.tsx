@@ -1,6 +1,6 @@
 import { ExploreDataProps } from "../../hooks/views/useExplore";
 
-import { PlantDetector } from "../../components/WEFA/PlantDetector";
+import { PlantDetector } from "../../components/Plants/PlantDetector";
 
 interface ExploreProps extends ExploreDataProps {}
 

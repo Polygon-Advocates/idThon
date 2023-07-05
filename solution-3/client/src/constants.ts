@@ -77,37 +77,6 @@ export const elementColors: Record<WefaElement, string> = {
   AIR: "#F4B53F",
 };
 
-export const plantColors: Record<PlantType, string> = {
-  flower: "#fbbf24",
-  fruit: "#f59e0b",
-  herb: "#f472b6",
-  vegetable: "#10b981",
-};
-
-export const rankColors: Record<WefaRank, string> = {
-  0: "#ffffff",
-  1: "#fbbf24",
-  2: "#f59e0b",
-  3: "#10b981",
-  4: "#3b82f6",
-  5: "#9c4224",
-  6: "#111827",
-  7: "#f87171",
-  8: "#dc2626",
-};
-
-export const rankNames: Record<WefaRank, string> = {
-  0: "White",
-  1: "Yellow",
-  2: "Orange",
-  3: "Green",
-  4: "Blue",
-  5: "Brown",
-  6: "Black",
-  7: "Red-White",
-  8: "Red",
-};
-
 export function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
