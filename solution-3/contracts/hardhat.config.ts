@@ -5,7 +5,7 @@ const DEFAULT_MNEMONIC =
   "test test test test test test test test test test test junk";
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.18",
+  solidity: "0.8.16",
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545",

@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "pnpm mud dev-contracts --tsgenOutput ../client/src/modules/openar",
-    "test": "tsc --noEmit && mud test",
     "build": "forge clean && forge build",
     "deploy:local": "dotenv && pnpm run initialize && mud deploy",
     "deploy:testnet": "pnpm run initialize && mud deploy --profile=lattice-testnet"

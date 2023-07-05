@@ -6,6 +6,7 @@ artifacts
 abi
 # types/
 broadcast
+typechain-types
 
 # Ignore MUD deploy artifacts
 deploys/**/*.json
