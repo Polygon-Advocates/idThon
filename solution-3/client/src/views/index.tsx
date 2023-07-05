@@ -12,13 +12,9 @@ import { a, useTransition } from "@react-spring/web";
 import { useApp } from "../hooks/app/useApp";
 import { useDeck } from "../hooks/views/useDeck";
 import { useExplore } from "../hooks/views/useExplore";
-import { useProfile } from "../hooks/views/useProfile";
 
 import Deck from "./Deck";
-import Play from "./Play";
 import Explore from "./Explore";
-import Profile from "./Profile";
-import { usePlay } from "../hooks/views/usePlay";
 
 type LowerElement = "water" | "earth" | "fire" | "air";
 
@@ -39,9 +35,7 @@ export default function Views() {
   const { isDesktop, setTheme } = useApp();
 
   const deck = useDeck();
-  const play = usePlay();
   const explore = useExplore();
-  const profile = useProfile();
 
   useEffect(() => {
     const element = searchParams.get("element") as LowerElement | null;
@@ -56,7 +50,6 @@ export default function Views() {
   }, []);
 
   return transitions((style, location) => (
-    // <Profiler id="views" onRender={callback}>
     <a.main
       className={`flex h-[calc(100dvh-4rem)] overflow-hidden max-h-[calc(100dvh-4rem)] ${
         isDesktop ? "" : "overflow-y-contain"
@@ -65,12 +58,9 @@ export default function Views() {
     >
       <Routes location={location}>
         <Route path="/deck" element={<Deck {...deck} />} />
-        <Route path="/play" element={<Play {...play} />} />
         <Route path="/explore" element={<Explore {...explore} />} />
-        <Route path="/profile" element={<Profile {...profile} />} />
         <Route path="*" element={<Navigate to="/explore" />} />
       </Routes>
     </a.main>
-    // </Profiler>
   ));
 }

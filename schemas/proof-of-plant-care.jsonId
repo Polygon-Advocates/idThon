@@ -26,6 +26,10 @@
             "@id": "vocab:canClaimCredit",
             "@type": "xsd:boolean"
           },
+           "health": {
+            "@id": "vocab:health",
+            "@type": "xsd:integer"
+          },
           "image": {
             "@id": "vocab:image",
             "@type": "xsd:string"

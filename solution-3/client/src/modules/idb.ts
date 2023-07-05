@@ -9,10 +9,6 @@ interface WEFADB extends DBSchema {
     key: string;
     value: Creature;
   };
-  badges: {
-    key: BadgeType;
-    value: WefaBadge;
-  };
 }
 
 export let db: IDBPDatabase<WEFADB> | undefined;
@@ -36,9 +32,6 @@ export async function initDB() {
           keyPath: "id",
         });
         db.createObjectStore("creatures", {
-          keyPath: "id",
-        });
-        db.createObjectStore("badges", {
           keyPath: "id",
         });
       },
@@ -77,13 +70,6 @@ export async function createCreature(creature: Creature) {
   await store?.put(creature);
 }
 
-export async function createBadge(badge: WefaBadge) {
-  const db = await initDB();
-  const transaction = db?.transaction("badges", "readwrite");
-  const store = transaction?.objectStore("badges");
-  await store?.put(badge);
-}
-
 export async function readPlants() {
   const db = await initDB();
   const transaction = db?.transaction("plants", "readonly");
@@ -102,17 +88,6 @@ export async function readCreatures() {
   const db = await initDB();
   const transaction = db?.transaction("creatures", "readonly");
   const store = transaction?.objectStore("creatures");
-  const data = await store?.getAll();
-
-  if (!data) return [];
-
-  return data;
-}
-
-export async function readBadges() {
-  const db = await initDB();
-  const transaction = db?.transaction("badges", "readonly");
-  const store = transaction?.objectStore("badges");
   const data = await store?.getAll();
 
   if (!data) return [];
@@ -145,12 +120,5 @@ export async function deleteCreature(id: string) {
   const db = await initDB();
   const transaction = db?.transaction("creatures", "readwrite");
   const store = transaction?.objectStore("creatures");
-  await store?.delete(id);
-}
-
-export async function deleteBadge(id: BadgeType) {
-  const db = await initDB();
-  const transaction = db?.transaction("badges", "readwrite");
-  const store = transaction?.objectStore("badges");
   await store?.delete(id);
 }

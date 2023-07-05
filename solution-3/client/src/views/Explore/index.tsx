@@ -1,22 +1,17 @@
 import { ExploreDataProps } from "../../hooks/views/useExplore";
 
 import { PlantDetector } from "../../components/WEFA/PlantDetector";
-import { ElementSelector } from "../../components/WEFA/ElementSelector";
 import { CreatureGeneration } from "../../components/WEFA/CreatureGeneration";
 
 interface ExploreProps extends ExploreDataProps {}
 
-// TODO: Add Explore Canvas from Petra
 const Explore: React.FC<ExploreProps> = ({
   creature,
   error,
-  element,
   plantingState,
-  elementState,
   isDetecting,
   isSeeding,
   verifyPlant,
-  seedCreature,
   plant,
   reset,
 }) => {
@@ -39,11 +34,6 @@ const Explore: React.FC<ExploreProps> = ({
           />
         )}
       </div>
-      <ElementSelector
-        state={isDetecting ? "loading" : elementState ? "done" : "idle"}
-        onElementSelected={seedCreature}
-        selectedElement={element ?? null}
-      />
     </section>
   );
 };

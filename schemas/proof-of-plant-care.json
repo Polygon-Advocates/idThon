@@ -84,6 +84,7 @@
       "required": [
         "plantDid",
         "spaceDid",
+        "health",
         "canClaimCredit",
         "image",
         "plantDate"
@@ -94,6 +95,9 @@
         },
         "spaceDid": {
           "type": "string"
+        },
+        "health": {
+          "type": "integer"
         },
         "canClaimCredit": {
           "title": "Can claim carbon credit",

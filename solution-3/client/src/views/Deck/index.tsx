@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { a } from "@react-spring/web";
 
 import { useApp } from "../../hooks/app/useApp";
+import { useWefa } from "../../hooks/wefa/useWefa";
 import { DeckDataProps, DeckTab } from "../../hooks/views/useDeck";
 
+import { DeckItems } from "../../components/Deck/Items";
 import { DeckStats } from "../../components/Deck/Stats";
 import { DeckViewer, DeckViewerData } from "../../components/Deck/Viewer";
-import { DeckItems } from "../../components/Deck/Items";
-import { useWefa } from "../../hooks/wefa/useWefa";
 
 const tabs: DeckTab[] = ["plants", "creatures"];
 

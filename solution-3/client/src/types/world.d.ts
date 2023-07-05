@@ -12,17 +12,6 @@ declare enum WefaRank {
   RED,
 }
 
-declare type BadgeType = PlantBadgeType | CreatureBadgeType | "early-adopter";
-
-declare interface WefaBadge {
-  id: BadgeType;
-  name: string;
-  description: string;
-  element?: WefaElement;
-  color?: string;
-  Icon: string;
-}
-
 declare enum GrowthLevel {
   SEED,
   BUDDING,
