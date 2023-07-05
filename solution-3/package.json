@@ -7,12 +7,10 @@
     "url": "https://github.com/wefa-tech/idThon/solution-3"
   },
   "scripts": {
-    "initialize": "pnpm recursive run initialize",
-    "dev": "concurrently -n verifier,api,generator,client -c cyan,green,yellow,magenta 'cd packages/verifier && pnpm dev' 'cd packages/api && pnpm dev' 'pnpm dev:contracts' 'cd packages/client && pnpm dev'",
+    "dev": "concurrently -n issuer,verifier,api,client -c cyan,green,yellow,magenta 'pnpm dev:issuer' 'pnpm dev:verifier' 'pnpm dev:api' 'pnpm dev:client'",
     "dev:api": "pnpm --filter 'api' run dev",
     "dev:client": "pnpm --filter 'client' run dev",
-    "dev:contracts": "cd packages/contracts && python3 main.py",
-    "test": "pnpm recursive run test",
-    "build": "pnpm recursive run build"
+    "dev:issuer": "cd issuer && make up && make run-ui-arm",
+    "dev:verifier": "cd verifier && python3 main.py"
   }
 }

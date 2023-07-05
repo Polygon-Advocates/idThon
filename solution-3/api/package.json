@@ -7,18 +7,9 @@
   "repository": {
     "url": "https://github.com/wefa-tech/openar/packages/api"
   },
-  "keywords": [
-    "node",
-    "graphql-codegen",
-    "fastify",
-    "typescript",
-    "api",
-    "wefa"
-  ],
   "main": "dist/index.js",
   "scripts": {
     "docker:build": "docker build -t api .",
-    "docker:compose": "docker-compose up -d --build",
     "docker:run": "docker run -p 8081:8081 api",
     "format": "pnpm run prettier && pnpm run lint",
     "prettier": "prettier --write \"src/**/*.ts\"",

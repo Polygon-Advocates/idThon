@@ -6,13 +6,13 @@
       "id": "@id",
       "type": "@type",
       "ProofOfPlantCare": {
-        "@id": "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/credential-schemas/plant-care/proof-of-plant-care.jsonld#ProofOfPlantCare",
+        "@id": "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/schemas/proof-of-plant-care.jsonld#ProofOfPlantCare",
         "@context": {
           "@version": 1.1,
           "@protected": true,
           "id": "@id",
           "type": "@type",
-          "vocab": "https://github.com/wefa-tech/idThon/blob/Oba-One_idThon/credential-schema/proof-of-plant-care-vocab.md#",
+          "vocab": "https://github.com/wefa-tech/idThon/blob/Oba-One_idThon/schemas/proof-of-plant-care-vocab.md#",
           "xsd": "http://www.w3.org/2001/XMLSchema#",
           "plantDid": {
             "@id": "vocab:plantDid",
@@ -26,7 +26,7 @@
             "@id": "vocab:canClaimCredit",
             "@type": "xsd:boolean"
           },
-           "health": {
+          "health": {
             "@id": "vocab:health",
             "@type": "xsd:integer"
           },

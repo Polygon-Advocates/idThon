@@ -3,7 +3,7 @@
   "type": "object",
   "$metadata": {
     "uris": {
-      "jsonLdContext": "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/schemas/proof-of-plant-care.jsonId",
+      "jsonLdContext": "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/schemas/proof-of-plant-care.jsonld",
       "jsonSchema": "https://raw.githubusercontent.com/wefa-tech/idThon/Oba-One_idThon/schemas/proof-of-plant-care.json"
     }
   },
