@@ -11,6 +11,8 @@ SAFU Perks rewards crypto explorers that have earned Verifiable Credentials (VCs
 3. ???
 4. PROFIT!
 
+![Screenshot of SAFU Perks](https://raw.githubusercontent.com/d0wnlore/urban-spork/d0wnlore_idThon/shot.png)
+
 ## Instructions
 
 This dApp is not hosted anywhere, so this needs to be ran locally or deployed with the existing boilerplate instructions at the end of this README. Make sure that the verifier server is publicly accessible using Ngrok or Serveo if deployed locally (or just set the appropriate state flag to `true` in `App.js` to test the unlocked state).
