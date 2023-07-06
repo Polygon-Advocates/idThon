@@ -31,15 +31,9 @@ Participate now and stand a chance to win a share of the $4500 [$1500 each team 
 7️⃣ The decision of the judges is final and binding.
 
 
-## 📋 How to Participate:
+## 📋 Solution:
 
-1.  Form a team of up to 4 members, bringing together a diverse set of skills.
-    
-2.  Build a thing that highlights your innovative use of Polygon ID tools.
-    
-3.  Prioritize a seamless user experience and clearly communicate access requirements.
-    
-4.  Submit your completed project [**here**](https://airtable.com/shrNCmi6zP4RDklNi) before the deadline, following the [guidelines](https://github.com/Polygon-Advocates/idThon/blob/main/pull_request_template.md) provided in the challenge repository.
-    
+I have made a Modular Hardware Wallet for Polygon ID where users can scan their card and verify their identity using a password seamlessly and interact with verifier servers easily !
 
-🏆 **Evaluation Criteria:** Projects will be evaluated based on the innovative use of Polygon ID, user experience UX,  and the overall quality of your submission.
+Github Repository: [Click](https://github.com/Sud0-AP/Polygon-ID-Hardware-Wallet/tree/main)
+Demo Video : [Click](https://youtu.be/euoEZ8p4uLk)
