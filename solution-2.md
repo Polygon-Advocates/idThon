@@ -10,4 +10,6 @@ There is also an unexpected error that keeps breaking the dapp frontend, that I 
 The developed dapp is the following one: [dapp](https://github.com/ferrabled/idthon-dapp)
 The developed dapp functions as a counter that can be incremented or decremented based on your prediction of whether Polygon's price will rise or fall. Access to the dapp is restricted to individuals above the age of 18 and requires age verification before entry, this verification is done with Polygon ID.
 
-There is also a new smart contract deployed [smart contract](0x98FCA914eBB5b5457839274baCF607595fBC390D)
+There is also a new smart contract deployed -> \
+🔍 [explorer](https://testnet-zkevm.polygonscan.com/address/0x98fca914ebb5b5457839274bacf607595fbc390d) \
+👨🏼‍💻 [code](https://github.com/ferrabled/idthon-dapp/blob/main/frontend/src/demoSmartContract/Counter.sol)
